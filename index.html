@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2563eb">
+<title>DIY 电子观察 · 手机纯净版</title>
+<style>
+:root {
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --text:#162033;
+  --muted:#667085;
+  --line:#e6ebf2;
+  --blue:#2563eb;
+  --teal:#0f766e;
+  --shadow:0 10px 30px rgba(16,24,40,.08);
+  --radius:18px;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(37,99,235,.14), transparent 34%),
+    radial-gradient(circle at 92% 8%, rgba(15,118,110,.12), transparent 30%),
+    var(--bg);
+}
+a { color:inherit; text-decoration:none; }
+.header {
+  position:sticky;
+  top:0;
+  z-index:20;
+  padding:16px 14px 12px;
+  backdrop-filter:blur(16px);
+  background:rgba(244,247,251,.88);
+  border-bottom:1px solid rgba(230,235,242,.85);
+}
+.title {
+  background:linear-gradient(135deg, rgba(37,99,235,.96), rgba(15,118,110,.92));
+  color:white;
+  padding:18px;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+}
+.title h1 {
+  margin:0;
+  font-size:24px;
+  line-height:1.2;
+}
+.title p {
+  margin:8px 0 0;
+  font-size:13px;
+  line-height:1.65;
+  color:rgba(255,255,255,.92);
+}
+.nav {
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding-top:12px;
+  scrollbar-width:none;
+}
+.nav::-webkit-scrollbar { display:none; }
+.chip {
+  flex:0 0 auto;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.9);
+  color:#344054;
+  font-size:13px;
+  white-space:nowrap;
+}
+.main {
+  padding:14px 14px 44px;
+  max-width:820px;
+  margin:0 auto;
+}
+.section {
+  margin:18px 0 22px;
+  scroll-margin-top:160px;
+}
+.section-head {
+  margin:0 2px 10px;
+}
+.section-head h2 {
+  margin:0;
+  font-size:20px;
+}
+.section-head p {
+  margin:5px 0 0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+.list {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+.card {
+  display:block;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:14px;
+  box-shadow:0 6px 18px rgba(16,24,40,.05);
+}
+.card:active { transform:scale(.986); }
+.top {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.top h3 {
+  margin:0;
+  font-size:16px;
+  line-height:1.35;
+}
+.top span {
+  flex:0 0 auto;
+  font-size:12px;
+  color:var(--teal);
+  background:#e9fbf7;
+  border:1px solid #c9f4ea;
+  border-radius:999px;
+  padding:4px 8px;
+}
+.card p {
+  margin:8px 0 0;
+  color:#475467;
+  line-height:1.6;
+  font-size:13px;
+}
+.domain {
+  margin-top:8px;
+  color:#98a2b3;
+  font-size:12px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.footer {
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  padding:8px 6px 0;
+}
+@media (min-width: 760px) {
+  .list { grid-template-columns:repeat(2, minmax(0,1fr)); }
+}
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="title">
+      <h1>DIY 电子观察</h1>
+      <p>手机纯净版导航页。只保留分类导航和网站卡片，适合放到 GitHub Pages 后在手机上长期浏览。</p>
+    </div>
+    <nav class="nav">
+      <a class="chip" href="#sec1">看产品</a>
+<a class="chip" href="#sec2">看开源项目</a>
+<a class="chip" href="#sec3">看成熟品牌</a>
+<a class="chip" href="#sec4">看工程师讨论</a>
+<a class="chip" href="#sec5">看众筹和新品</a>
+<a class="chip" href="#sec6">看供应链和打样</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    
+    <section class="section" id="sec1">
+      <div class="section-head">
+        <h2>看产品</h2>
+        <p>观察产品形态、定价、图片、套件内容和页面表达。</p>
+      </div>
+      <div class="list">
+        
+        <a class="card" href="https://www.tindie.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Tindie</h3>
+            <span>首推</span>
+          </div>
+          <p>海外创客硬件、小批量 DIY 电子产品。</p>
+          <div class="domain">www.tindie.com</div>
+        </a>
+        
+        <a class="card" href="https://lectronz.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Lectronz</h3>
+            <span>开源</span>
+          </div>
+          <p>偏开源硬件、DIY electronics 的小团队市场。</p>
+          <div class="domain">lectronz.com</div>
+        </a>
+        
+        <a class="card" href="https://www.crowdsupply.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Crowd Supply</h3>
+            <span>众筹</span>
+          </div>
+          <p>工程师向硬件众筹与销售平台。</p>
+          <div class="domain">www.crowdsupply.com</div>
+        </a>
+        
+        <a class="card" href="https://www.etsy.com/c/electronics-and-accessories" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Etsy Electronics</h3>
+            <span>创意</span>
+          </div>
+          <p>创意电子、DIY 套件、外壳、桌面小物。</p>
+          <div class="domain">www.etsy.com/c/electronics-and-accessories</div>
+        </a>
+        
+        <a class="card" href="https://www.ebay.com/b/Electronics/bn_7000259124" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>eBay Electronics</h3>
+            <span>市场</span>
+          </div>
+          <p>看模块、配件、小仪器和二手设备。</p>
+          <div class="domain">www.ebay.com/b/Electronics/bn_7000259124</div>
+        </a>
+        
+        <a class="card" href="https://www.amazon.com/electronics-store/b?node=172282" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Amazon Electronics</h3>
+            <span>成熟</span>
+          </div>
+          <p>看成熟商品页面、评价和价格区间。</p>
+          <div class="domain">www.amazon.com/electronics-store/b?node=172282</div>
+        </a>
+        
+      </div>
+    </section>
+    
+    <section class="section" id="sec2">
+      <div class="section-head">
+        <h2>看开源项目</h2>
+        <p>重点看原理图、PCB、BOM、固件、项目日志和失败记录。</p>
+      </div>
+      <div class="list">
+        
+        <a class="card" href="https://hackaday.io/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Hackaday.io</h3>
+            <span>项目</span>
+          </div>
+          <p>开放硬件项目库，适合看项目全过程。</p>
+          <div class="domain">hackaday.io</div>
+        </a>
+        
+        <a class="card" href="https://hackaday.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Hackaday</h3>
+            <span>资讯</span>
+          </div>
+          <p>硬件项目资讯，每天刷灵感。</p>
+          <div class="domain">hackaday.com</div>
+        </a>
+        
+        <a class="card" href="https://github.com/explore" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>GitHub Explore</h3>
+            <span>开源</span>
+          </div>
+          <p>发现开源项目、代码、固件、PCB 资料。</p>
+          <div class="domain">github.com/explore</div>
+        </a>
+        
+        <a class="card" href="https://oshwhub.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>OSHWHub 立创开源硬件</h3>
+            <span>国内</span>
+          </div>
+          <p>国内开源硬件平台，看原理图、PCB、BOM。</p>
+          <div class="domain">oshwhub.com</div>
+        </a>
+        
+        <a class="card" href="https://projecthub.arduino.cc/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Arduino Project Hub</h3>
+            <span>教程</span>
+          </div>
+          <p>入门项目、教学套件和创客项目思路。</p>
+          <div class="domain">projecthub.arduino.cc</div>
+        </a>
+        
+        <a class="card" href="https://www.instructables.com/circuits/electronics/projects/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Instructables Circuits</h3>
+            <span>教程</span>
+          </div>
+          <p>电子 DIY 教程，适合看项目包装。</p>
+          <div class="domain">www.instructables.com/circuits/electronics/projects</div>
+        </a>
+        
+      </div>
+    </section>
+    
+    <section class="section" id="sec3">
+      <div class="section-head">
+        <h2>看成熟品牌</h2>
+        <p>学习它们如何把板子、代码、接线图、教程和应用场景组合成产品。</p>
+      </div>
+      <div class="list">
+        
+        <a class="card" href="https://www.adafruit.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Adafruit</h3>
+            <span>品牌</span>
+          </div>
+          <p>创客硬件品牌，产品包装和教程体系很值得学。</p>
+          <div class="domain">www.adafruit.com</div>
+        </a>
+        
+        <a class="card" href="https://learn.adafruit.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Adafruit Learn</h3>
+            <span>教程</span>
+          </div>
+          <p>教程页面、接线图、示例代码组织方式。</p>
+          <div class="domain">learn.adafruit.com</div>
+        </a>
+        
+        <a class="card" href="https://www.sparkfun.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>SparkFun</h3>
+            <span>品牌</span>
+          </div>
+          <p>传感器、Qwiic、GNSS、数据采集模块。</p>
+          <div class="domain">www.sparkfun.com</div>
+        </a>
+        
+        <a class="card" href="https://learn.sparkfun.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>SparkFun Learn</h3>
+            <span>教程</span>
+          </div>
+          <p>学习教程、示例代码和工程说明。</p>
+          <div class="domain">learn.sparkfun.com</div>
+        </a>
+        
+        <a class="card" href="https://www.seeedstudio.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Seeed Studio</h3>
+            <span>品牌</span>
+          </div>
+          <p>XIAO、Grove、SenseCAP、边缘 AI、IoT。</p>
+          <div class="domain">www.seeedstudio.com</div>
+        </a>
+        
+        <a class="card" href="https://wiki.seeedstudio.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Seeed Wiki</h3>
+            <span>文档</span>
+          </div>
+          <p>看产品文档、应用教程和生态打法。</p>
+          <div class="domain">wiki.seeedstudio.com</div>
+        </a>
+        
+        <a class="card" href="https://www.digikey.com/en/maker" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>DigiKey Maker.io</h3>
+            <span>教程</span>
+          </div>
+          <p>元器件应用、项目教程和工程参考。</p>
+          <div class="domain">www.digikey.com/en/maker</div>
+        </a>
+        
+      </div>
+    </section>
+    
+    <section class="section" id="sec4">
+      <div class="section-head">
+        <h2>看工程师讨论</h2>
+        <p>找痛点：供电、噪声、焊接、通信、外壳、文档、调试。</p>
+      </div>
+      <div class="list">
+        
+        <a class="card" href="https://www.reddit.com/r/esp32/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Reddit r/esp32</h3>
+            <span>ESP32</span>
+          </div>
+          <p>ESP32 项目、低功耗、Wi‑Fi/蓝牙、开发板坑点。</p>
+          <div class="domain">www.reddit.com/r/esp32</div>
+        </a>
+        
+        <a class="card" href="https://www.reddit.com/r/arduino/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Reddit r/arduino</h3>
+            <span>Arduino</span>
+          </div>
+          <p>Arduino 项目、传感器入门、教育套件方向。</p>
+          <div class="domain">www.reddit.com/r/arduino</div>
+        </a>
+        
+        <a class="card" href="https://www.reddit.com/r/diyelectronics/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Reddit r/diyelectronics</h3>
+            <span>DIY</span>
+          </div>
+          <p>DIY 电子项目和创客讨论。</p>
+          <div class="domain">www.reddit.com/r/diyelectronics</div>
+        </a>
+        
+        <a class="card" href="https://www.reddit.com/r/AskElectronics/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Reddit r/AskElectronics</h3>
+            <span>问答</span>
+          </div>
+          <p>真实电路问题、模拟电路、调试痛点。</p>
+          <div class="domain">www.reddit.com/r/AskElectronics</div>
+        </a>
+        
+        <a class="card" href="https://www.reddit.com/r/PrintedCircuitBoard/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Reddit r/PrintedCircuitBoard</h3>
+            <span>PCB</span>
+          </div>
+          <p>PCB 设计评审，适合学习别人怎么改板。</p>
+          <div class="domain">www.reddit.com/r/PrintedCircuitBoard</div>
+        </a>
+        
+        <a class="card" href="https://www.reddit.com/r/embedded/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Reddit r/embedded</h3>
+            <span>嵌入式</span>
+          </div>
+          <p>嵌入式开发、固件、MCU、RTOS。</p>
+          <div class="domain">www.reddit.com/r/embedded</div>
+        </a>
+        
+        <a class="card" href="https://www.eevblog.com/forum/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>EEVblog Forum</h3>
+            <span>论坛</span>
+          </div>
+          <p>电子工程师论坛，仪器、电源、模拟电路、测量。</p>
+          <div class="domain">www.eevblog.com/forum</div>
+        </a>
+        
+        <a class="card" href="https://forum.kicad.info/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>KiCad Forum</h3>
+            <span>PCB</span>
+          </div>
+          <p>KiCad 画板、封装、布线和生产文件。</p>
+          <div class="domain">forum.kicad.info</div>
+        </a>
+        
+      </div>
+    </section>
+    
+    <section class="section" id="sec5">
+      <div class="section-head">
+        <h2>看众筹和新品</h2>
+        <p>学习硬件项目如何讲故事、列参数、做交付计划和更新日志。</p>
+      </div>
+      <div class="list">
+        
+        <a class="card" href="https://www.kickstarter.com/discover/categories/technology" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Kickstarter Technology</h3>
+            <span>众筹</span>
+          </div>
+          <p>消费级新奇硬件、教育套件、桌面工具。</p>
+          <div class="domain">www.kickstarter.com/discover/categories/technology</div>
+        </a>
+        
+        <a class="card" href="https://www.indiegogo.com/explore/tech-innovation" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Indiegogo Tech</h3>
+            <span>众筹</span>
+          </div>
+          <p>硬件创新项目和市场表达。</p>
+          <div class="domain">www.indiegogo.com/explore/tech-innovation</div>
+        </a>
+        
+        <a class="card" href="https://www.producthunt.com/topics/hardware" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Product Hunt Hardware</h3>
+            <span>新品</span>
+          </div>
+          <p>新硬件产品、桌面小工具、AI/IoT 硬件。</p>
+          <div class="domain">www.producthunt.com/topics/hardware</div>
+        </a>
+        
+        <a class="card" href="https://www.crowdsupply.com/newsletter" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Crowd Supply Newsletter</h3>
+            <span>订阅</span>
+          </div>
+          <p>订阅开源硬件、开发板和工程工具新品。</p>
+          <div class="domain">www.crowdsupply.com/newsletter</div>
+        </a>
+        
+      </div>
+    </section>
+    
+    <section class="section" id="sec6">
+      <div class="section-head">
+        <h2>看供应链和打样</h2>
+        <p>从 PCB、SMT、元器件、外壳和小批量制造角度学习产品化。</p>
+      </div>
+      <div class="list">
+        
+        <a class="card" href="https://jlcpcb.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>JLCPCB</h3>
+            <span>制造</span>
+          </div>
+          <p>PCB 打样、SMT、小批量硬件制造。</p>
+          <div class="domain">jlcpcb.com</div>
+        </a>
+        
+        <a class="card" href="https://www.szlcsc.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>立创商城 LCSC</h3>
+            <span>元件</span>
+          </div>
+          <p>国内元器件采购和 BOM 选型。</p>
+          <div class="domain">www.szlcsc.com</div>
+        </a>
+        
+        <a class="card" href="https://www.jlc-bbs.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>嘉立创社区</h3>
+            <span>社区</span>
+          </div>
+          <p>PCB、EDA、SMT、开源硬件讨论。</p>
+          <div class="domain">www.jlc-bbs.com</div>
+        </a>
+        
+        <a class="card" href="https://www.digikey.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>DigiKey</h3>
+            <span>元件</span>
+          </div>
+          <p>海外元器件、开发板、数据手册。</p>
+          <div class="domain">www.digikey.com</div>
+        </a>
+        
+        <a class="card" href="https://www.mouser.com/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>Mouser</h3>
+            <span>元件</span>
+          </div>
+          <p>海外元器件、传感器、芯片和开发板。</p>
+          <div class="domain">www.mouser.com</div>
+        </a>
+        
+        <a class="card" href="https://www.pcbway.com/project/" target="_blank" rel="noopener">
+          <div class="top">
+            <h3>PCBWay Shared Projects</h3>
+            <span>PCB</span>
+          </div>
+          <p>公开 PCB 项目和制造案例。</p>
+          <div class="domain">www.pcbway.com/project</div>
+        </a>
+        
+      </div>
+    </section>
+    
+    <p class="footer">生成时间：2026-06-06 · 手机纯净版 · 本地可打开，外部网站需联网</p>
+  </main>
+</body>
+</html>
